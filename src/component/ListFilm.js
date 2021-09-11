@@ -3,7 +3,7 @@ import { CardFilm } from './CardFilm'
 
 export const ListFilm = ({film}) => {
     return (
-        <div>
+        <div >
            {film.map((fil) => (
                <CardFilm 
                key ={fil.id}

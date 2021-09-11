@@ -1,11 +1,12 @@
 import React from 'react'
 import { Nav , NavDropdown ,Navbar , Container, Form,FormControl,Button} from 'react-bootstrap'
-import { useState } from 'react';
-export const NavBar = ({film}) => {
+import { Rate } from './Rate'
 
-    const [search,setsearch]=useState('');
-    
-    
+
+
+export const NavBar = ({ setSearchInput, setSearchRate, searchRate }) => {
+
+
     return (
         <div>
             <Navbar bg="light" expand="lg">
@@ -25,14 +26,19 @@ export const NavBar = ({film}) => {
                         </NavDropdown>
                         </Nav>
                         <Form className="d-flex">
-                        <FormControl type="search" placeholder="Search" className="mr-2" aria-label="Search" onChange={(e)=>setsearch(e.target.value) }/>
+                        <FormControl  type="search"  placeholder="Search" className="mr-2" aria-label="  Search"   onChange={(e) => setSearchInput(e.target.value)} />
                         <Button variant="outline-success" >Search</Button>
                          </Form>
+                         
 
                         </Navbar.Collapse>
 
                 </Container>
+                
             </Navbar>
+            <Rate rating={searchRate} setSearchRate={setSearchRate}/>
+            
         </div>
+        
     )
 }

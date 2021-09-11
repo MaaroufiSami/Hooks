@@ -69,7 +69,8 @@ function App() {
 }
 
 ])
-const [search,useSearch]=("");
+const [searchInput, setSearchInput] = useState("")
+const [searchRate, setSearchRate] = useState(0)
 
 
 const add =(newfilm) => {
@@ -77,13 +78,17 @@ const add =(newfilm) => {
 }
 
 
+
+
   return (
     <div className="App">
-      <NavBar film={film}
-      search={search}/> 
-      <ListFilm film={film} />
+      <NavBar setSearchInput={setSearchInput} setSearchRate={setSearchRate} searchRate={searchRate} /> 
+      <ListFilm  film={film.filter(el =>
+        el.star >= searchRate &&
+        el.name.toUpperCase().includes(searchInput.toUpperCase().trim()))}  />
       <AddFilm
       add={add}/>
+      
     </div>
   );
 }
