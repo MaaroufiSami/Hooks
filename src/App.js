@@ -3,6 +3,10 @@ import { NavBar } from './component/NavBar';
 import { ListFilm } from './component/ListFilm';
 import {useState} from 'react'
 import { AddFilm } from './component/AddFilm';
+import {Route} from "react-router-dom";
+import { DescreptionPage } from './component/DescreptionPage';
+import { WordJs } from './component/WordJs';
+
  
 
 function App() {
@@ -83,12 +87,22 @@ const add =(newfilm) => {
   return (
     <div className="App">
       <NavBar setSearchInput={setSearchInput} setSearchRate={setSearchRate} searchRate={searchRate} /> 
-      <ListFilm  film={film.filter(el =>
+      
+        <Route  path="/home" render={()=><p>home page</p>} />
+
+      <Route exact path="/" render={()=> <>
+        <ListFilm  film={film.filter(el =>
         el.star >= searchRate &&
         el.name.toUpperCase().includes(searchInput.toUpperCase().trim()))}  />
       <AddFilm
       add={add}/>
-      
+
+      </>} />
+      <Route
+        path="/:id"
+        render={(props) => <DescreptionPage  {...props} film={film} /> }
+      />
+
     </div>
   );
 }

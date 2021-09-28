@@ -1,9 +1,10 @@
 import React from 'react'
 import { Card } from 'react-bootstrap'
 import { Rate } from './Rate'
-
+import {Link} from "react-router-dom";
 
 export const CardFilm = ({fil}) => {
+    
     return (
         <div  style={{display: "flex",flexWrap: "wrap",justifyContent: "space-between"}} >
 
@@ -15,6 +16,12 @@ export const CardFilm = ({fil}) => {
             <Card.Text> {fil.discription}
             </Card.Text>
             <Rate rating={fil.star} />
+            
+            <Link to={`/${fil.id}`}>
+                 {" "}
+                <h3> {fil.name} </h3>
+            </Link>
+
             </Card.Body>
             </Card>
             

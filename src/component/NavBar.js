@@ -1,5 +1,6 @@
 import React from 'react'
 import { Nav , NavDropdown ,Navbar , Container, Form,FormControl,Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 import { Rate } from './Rate'
 
 
@@ -15,7 +16,7 @@ export const NavBar = ({ setSearchInput, setSearchRate, searchRate }) => {
                      <Navbar.Toggle aria-controls="basic-navbar-nav" />
                         <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                        <Nav.Link href="#home">Home</Nav.Link>
+                        <Link  to="/"><h2>home</h2></Link>
                         <Nav.Link href="#link">Link</Nav.Link>
                         <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                         <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

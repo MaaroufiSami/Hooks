@@ -6,7 +6,8 @@ const data=[
         star: 5,
         duration: "189 minutes",
         discription: "The Green Mile is a 1999 American fantasy crime drama film written and directed by Frank Darabont and adapted from Stephen King’s 1996 novel of the same name.",
-        id:1
+        id:1,
+        trailer:"https://youtu.be/i0MTCXgil1M?t=12"
 
     },
     {
